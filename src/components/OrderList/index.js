@@ -1,9 +1,9 @@
 import { Item, Wrapper } from './styled'
 
-import { useStore } from '~/src/store/context'
+import { useOrders } from '~/src/store/orders'
 
 const OrderList = () => {
-  const [list] = useStore()
+  const [list] = useOrders()
 
   return (
     <Wrapper>

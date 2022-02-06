@@ -1,7 +1,11 @@
 import { Button } from './styled'
 
+import { useOrders } from '~/src/store/orders'
+
 const SellButton = () => {
-  return <Button>Sell</Button>
+  const [_, __, setSell] = useOrders()
+
+  return <Button onClick={() => setSell()}>Sell</Button>
 }
 
 export { SellButton }
