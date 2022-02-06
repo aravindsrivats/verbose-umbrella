@@ -1,15 +1,17 @@
 import { Orders } from '~/src/components/Orders'
 import { Wrapper } from './styled'
 
-import { Provider } from '~/src/store/context'
-import { initial } from '~/src/store/initial'
+import { BuyProvider } from '~/src/store/buy'
+import { SellProvider } from '~/src/store/sell'
 
 const App = () => (
-  <Provider initial={initial}>
-    <Wrapper>
-      <Orders />
-    </Wrapper>
-  </Provider>
+  <SellProvider>
+    <BuyProvider>
+      <Wrapper>
+        <Orders />
+      </Wrapper>
+    </BuyProvider>
+  </SellProvider>
 )
 
 export { App }

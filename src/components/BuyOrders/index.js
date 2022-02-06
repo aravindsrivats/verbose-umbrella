@@ -1,19 +1,17 @@
 import { Item } from './styled'
 
-import { useOrders } from '~/src/store/orders'
+import { useBuyOrders } from '~/src/store/buy'
 
 const BuyOrders = () => {
-  const [list] = useOrders()
+  const [list] = useBuyOrders()
 
   return (
     <>
-      {list
-        .filter(item => item.type === 'buy')
-        .map(item => (
-          <Item key={item.id}>
-            {item.size.toFixed(2)} - <span>{item.price.toFixed(2)}</span>
-          </Item>
-        ))}
+      {list.map(item => (
+        <Item key={item.id}>
+          {item.size.toFixed(2)} - <span>{item.price.toFixed(2)}</span>
+        </Item>
+      ))}
     </>
   )
 }

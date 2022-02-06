@@ -1,9 +1,9 @@
 import { Button } from './styled'
 
-import { useOrders } from '~/src/store/orders'
+import { useSellOrders } from '~/src/store/sell'
 
 const SellButton = () => {
-  const [_, __, setSell] = useOrders()
+  const [_, setSell] = useSellOrders()
 
   return <Button onClick={() => setSell()}>Sell</Button>
 }

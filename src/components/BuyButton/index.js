@@ -1,9 +1,9 @@
 import { Button } from './styled'
 
-import { useOrders } from '~/src/store/orders'
+import { useBuyOrders } from '~/src/store/buy'
 
 const BuyButton = () => {
-  const [_, setBuy] = useOrders()
+  const [_, setBuy] = useBuyOrders()
 
   return <Button onClick={() => setBuy()}>Buy</Button>
 }
