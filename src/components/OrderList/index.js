@@ -1,20 +1,9 @@
 import { Item, Wrapper } from './styled'
 
+import { useStore } from '~/src/store/context'
+
 const OrderList = () => {
-  const list = [
-    {
-      id: Math.random(),
-      size: Math.random(),
-      price: 3000 + 800 * Math.random(),
-      type: 'buy',
-    },
-    {
-      id: Math.random(),
-      size: Math.random(),
-      price: 3000 + 800 * Math.random(),
-      type: 'sell',
-    },
-  ]
+  const [list] = useStore()
 
   return (
     <Wrapper>
