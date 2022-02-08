@@ -3,12 +3,15 @@ import { Wrapper } from './styled'
 
 import { BuyProvider } from '~/src/store/buy'
 import { SellProvider } from '~/src/store/sell'
+import { Suspense } from 'react'
 
 const App = () => (
   <SellProvider>
     <BuyProvider>
       <Wrapper>
-        <Orders />
+        <Suspense fallback={<div>loading</div>}>
+          <Orders />
+        </Suspense>
       </Wrapper>
     </BuyProvider>
   </SellProvider>

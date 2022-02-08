@@ -1,18 +1,5 @@
-import { BuyButton } from '~/src/components/BuyButton'
-import { SellButton } from '~/src/components/SellButton'
-import { OrderList } from '~/src/components/OrderList'
-import { ButtonContainer } from './styled'
+import { lazy } from 'react'
 
-const Orders = () => {
-  return (
-    <>
-      <ButtonContainer>
-        <BuyButton />
-        <SellButton />
-      </ButtonContainer>
-      <OrderList />
-    </>
-  )
-}
+const Orders = lazy(() => import('./Orders'))
 
 export { Orders }
